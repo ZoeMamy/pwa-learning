@@ -14,6 +14,7 @@
     <script src="ressources/js/script-map.js" type="application/javascript"></script>
     <!-- hammer js -->
     <script src="ressources/js/hammer.js"></script>
+    
 
 </head>
 
@@ -39,20 +40,30 @@
 
         <script src="https://maps.google.com/maps/api/js?key=AIzaSyDzjfS_IbUPlI_P5hSeRxBJi0BndWsNyVQ"></script>
 
+        <h2>2. Implementing Gestures with Hammer.js</h2>
+        <h3>Swipe gesture</h3>
         Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
-        <div id="hammer-panel-2" class="hammer-panel">
+        <div id="hammer-panel-2" class="info-panel">
             <label id="block">Swipe me</label>            
         </div>
         <div class="msg-panel"><span id="swipe-msg"></span></div>
-
-        <h2>Implementing Gestures with Hammer.js</h2>
+        <h3>Swipe gesture</h3>
         Hint: Please simulate a pan gesture in the panel, and see result inside.
-        <div id="hammer-panel-1" class="hammer-panel"></div>
+        <div id="hammer-panel-1" class="info-panel"></div>
+
+        <h2>3. Implementing Device Interaction API</h2>
+        <h3>Battery status</h3>
+        <div class="info-panel-2">
+            <div id="charing">N/A</div>
+            <div id="level">N/A</div>
+            <div id="chargingtimechange">N/A</div>
+        </div>
     </main>
 
 
     <script src="ressources/js/script-hammer.js" type="application/javascript"></script>
-
+    <!-- battery status -->
+    <script src="ressources/js/script-battery-status.js"></script>
 </body>
 
 </html>
