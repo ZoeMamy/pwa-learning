@@ -27,7 +27,7 @@
         <button onclick="getLocation()">See my location</button>
 
         <div id="custom-info" class="my-form" style="display: none;">
-            <h3>Please fill these info</h3>
+            <h3>Please change these info for better customization</h3>
             <form>
                 <div>
                     <div class="row">
@@ -35,6 +35,10 @@
                         <select name="" id="province-or-territory">
                             <!-- Dynamic loading here -->
                         </select>
+                    </div>
+                    <div class="row">
+                        <label for="age">Age : </label>
+                        <input id="age" type="number" value="" onchange="handleChangedAge(this.value)"></age>
                     </div>
                 </div>
             </form>

@@ -164,4 +164,11 @@ function prepareCumputedInfoBasedOnProvince() {
     $('#province').text(provinceData[selectedProvince].province)
     $('#premier').text(provinceData[selectedProvince].premier)
     $('#taxes').text(provinceData[selectedProvince].taxes.join(', '))
+    $('#age').text(computedInfo.age)
+}
+
+function handleChangedAge(value) {
+    console.log("Age has changed", value)
+    computedInfo.age = value
+    showComputedInfoForm()
 }
