@@ -33,5 +33,27 @@ body {margin:20px;}
   font: 30px/300px Helvetica, Arial, sans-serif;
 }
 
+.msg-panel{
+  background: silver;
+  height: 50px;
+  text-align: center;
+  font: 30px Helvetica, Arial, sans-serif;
+}
 
+#block{
+	width: 300px;
+	height: 70px;
+	/* margin-top: calc(50vh - 50px); */
+	margin-left: 10vw;
+	background-color: #00796B;
+	border-radius: 7px;
+  font-size: 3em;
+  text-align:center;
+  color: #fff;
+  /* font-family: 'Baloo Chettan', cursive; */
+}
 
+#swipe-msg{
+  font-size: 1em;
+  /* color: silver; */
+}
