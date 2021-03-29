@@ -40,17 +40,16 @@ body {margin:20px;}
   font: 30px Helvetica, Arial, sans-serif;
 }
 
-#block{
+.my-label{
 	width: 300px;
 	height: 70px;
 	/* margin-top: calc(50vh - 50px); */
-	margin-left: 10vw;
+	/* margin-left: 10vw; */
 	background-color: #00796B;
 	border-radius: 7px;
-  font-size: 3em;
-  text-align:center;
+  font-size: 1.5em;
+  text-align: center;
   color: #fff;
-  /* font-family: 'Baloo Chettan', cursive; */
 }
 
 #swipe-msg{

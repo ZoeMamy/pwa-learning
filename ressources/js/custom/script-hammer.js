@@ -3,6 +3,7 @@
  */
 console.debug('loading hammer-panel-1')
 var myElement = document.getElementById('hammer-panel-1');
+var msgElement = document.getElementById('swipe-msg-pan');
 
 // create a simple instance
 // by default, it only adds horizontal recognizers
@@ -18,8 +19,8 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 // listen to events...
 console.debug('hammer', 'listen to events for ', 'pan')
 mc.on("panleft panright panup pandown", function (ev) {
-    let msg = ev.type + " gesture detected.";
-    myElement.textContent = msg
+    let msg = ev.type + " detected.";
+    msgElement.textContent = msg
     console.debug('Hammer event', 'Pan', msg)
 });
 
@@ -31,17 +32,17 @@ mc.on("panleft panright panup pandown", function (ev) {
 
 console.debug('loading hammer-panel-2')
 var myElement2 = document.getElementById('hammer-panel-2');
-var msgElement = document.getElementById('swipe-msg');
+var msgElement2 = document.getElementById('swipe-msg-swipe');
 Hammer(myElement2).on('swiperight swipeleft', function (ev) {
     //   animate blok
     let option = {}
     if (ev.type === 'swiperight') {
-        option = { 'margin-left': '50vw' }
+        option = { 'margin-left': '30vw' }
     } else {
-        option = { 'margin-left': '-50vw' }
+        option = { 'margin-left': '-30vw' }
     }
-    $('#block').animate(option, 1000);
+    $('#label-swipe').animate(option, 1000);
     let msg = ev.type + " detected";
     console.debug('Hammer', msg)
-    msgElement.textContent = msg
+    msgElement2.textContent = msg
 });
