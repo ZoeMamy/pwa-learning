@@ -71,22 +71,22 @@ var provinceData = {
 }
 
 var attractionLinksPerAges = {
-    0: 'link0',
-    5: 'link1',
-    10: 'link2',
-    15: 'link3',
-    20: 'link4',
-    25: 'link5',
-    30: 'link6',
-    35: 'link7',
-    40: 'link8',
-    45: 'link9',
-    50: 'link10',
-    60: 'link11',
-    70: 'link12',
-    80: 'link13',
-    90: 'link14',
-    100: 'link15'
+    0: 'Attraction link for new born to 5y-o',
+    5: 'Attraction link for 5y-o to 9y-o',
+    10: 'Attraction link for 10y-o to 14y-o',
+    15: 'Attraction link for 15y-o to 19y-o',
+    20: 'Attraction link for 20y-o to 24y-o',
+    25: 'Attraction link for 25y-o to 29y-o',
+    30: 'Attraction link for 30y-o to 34y-o',
+    35: 'Attraction link for 35y-o to 39y-o',
+    40: 'Attraction link for 40y-o to 44y-o',
+    45: 'Attraction link for 45y-o to 49y-o',
+    50: 'Attraction link for 50y-o to 59y-o',
+    60: 'Attraction link for 60y-o to 69y-o',
+    70: 'Attraction link for 70y-o to 79y-o',
+    80: 'Attraction link for 80y-o to 89y-o',
+    90: 'Attraction link for 90y-o to 99y-o',
+    100: 'Attraction link for 100y-o and over',
 }
 
 var computedInfo = { // provide default values
@@ -205,10 +205,15 @@ function getAttractionLinkFromAge(age) {
     var safeAge = !!age ? age * 1 : 0
     var existingAges = Object.keys(attractionLinksPerAges)
 
+    if(safeAge === 0) {
+        return attractionLinksPerAges['0'] 
+    }
+
     for (var i = 0; i < existingAges.length; i++) {
         console.log('look up age key', i, existingAges[i], attractionLinksPerAges[existingAges[i]])
         if (safeAge <= existingAges[i]) {
-            return attractionLinksPerAges[existingAges[i]];
+            return attractionLinksPerAges[existingAges[i - 1]];
         }
-      }
+    }
+    return attractionLinksPerAges['100'] // over 100y-o
 }
