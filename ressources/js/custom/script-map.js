@@ -65,8 +65,8 @@ var provinceData = {
     }
 }
 
-var computedInfo = {
-    province: '',
+var computedInfo = { // provide default values
+    province: 'ab',
     age: '',
     attrations: [],
 }
@@ -78,14 +78,6 @@ prepareProvincesList()
 /**
  * Methods
  */
-function prepareProvincesList() {
-    console.log(provinceData)
-    $.each(Object.keys(provinceData), function(i, item){
-        console.log("append", i, item, provinceData[item])
-        $('#province-or-territory').append('<option value ="' + item + '">' + provinceData[item].province + '</option>');
-      });
-}
-
 
 function getLocation() {
     // if (navigator.geolocation) {
@@ -149,6 +141,27 @@ function hideComputedInfoForm() {
 
 function showComputedInfoForm() {
     console.log('showComputedInfoForm')
-    $('#custom-info').show()
+    prepareCumputedInfoBasedOnProvince()
+    $('#computed-info').show()
 }
 
+function prepareProvincesList() {
+    console.log(provinceData)
+    $.each(Object.keys(provinceData), function(i, item){
+        console.log("append", i, item, provinceData[item])
+        $('#province-or-territory').append('<option value ="' + item + '">' + provinceData[item].province + '</option>');
+      });
+
+      $( "#province-or-territory" ).change(function() {
+        console.log('change provinde from select', $(this).val())
+        computedInfo.province = $(this).val()
+        showComputedInfoForm()
+      });
+}
+
+function prepareCumputedInfoBasedOnProvince() {
+    var selectedProvince = computedInfo.province
+    $('#province').text(provinceData[selectedProvince].province)
+    $('#premier').text(provinceData[selectedProvince].premier)
+    $('#taxes').text(provinceData[selectedProvince].taxes.join(', '))
+}
