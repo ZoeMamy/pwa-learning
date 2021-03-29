@@ -182,6 +182,7 @@ function getProvinceFromLatLong(lat, lng) {
 }
 
 function showError(error) {
+    console.log('error', error)
     switch (error.code) {
         case error.PERMISSION_DENIED:
             shouldShowProvincesSelector = true
@@ -209,9 +210,9 @@ function showError(error) {
 function showCustomInfoForm() {
     console.log('showCustomInfoForm')
     if (shouldShowProvincesSelector) {
-        $('#province-or-territory').show()
+        $('#province-or-territory-row').show()
     } else {
-        $('#province-or-territory').hide()
+        $('#province-or-territory-row').hide()
     }
     $('#custom-info').show()
 }
