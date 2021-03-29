@@ -5,63 +5,68 @@ var myMap = document.getElementById("my-map");
 var provinceData = {
     ab: {
         province: 'Alberta',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Jason Kenney',
+        taxes: ['GST 5%']
     },
     bc: {
         province: 'British Columbia',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'John Horgan',
+        taxes: ['PST 7%', 'GST 5%']
     },
     mb: {
         province: 'Manitoba',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Brian Pallister',
+        taxes: ['PST 7%', 'GST 5%']
     },
     nb: {
         province: 'New Brunswick',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Blaine Higgs',
+        taxes: ['HST 15%']
     },
     nl: {
         province: 'Newfoundland and Labrador',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Andrew Furey',
+        taxes: ['HST 15%']
     },
     nt: {
         province: 'Northwest Territories',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Caroline Cochrane',
+        taxes: ['GST 5%']
     },
     sc: {
         province: 'Nova Scotia',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Iain Rankin',
+        taxes: ['HST 15%']
+    },
+    on: {
+        province: 'Ontario',
+        premier: 'Doug Ford',
+        taxes: ['HST 13%']
     },
     nu: {
         province: 'Nunavut',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Joe Savikataaq',
+        taxes: ['GST 5%']
     },
     pe: {
         province: 'Prince Edward Island',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Dennis King',
+        taxes: ['HST 15%']
     },
     qc: {
         province: 'Quebec',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'François Legault',
+        taxes: ['PST 9.975%', 'GST 5%']
     },
     sk: {
         province: 'Saskatchewan',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Scott Moe',
+        taxes: ['PST 6%', 'GST 5%']
     },
     yt: {
         province: 'Yukon',
-        premier: 'XXX',
-        taxes: ['Taxe info 1', 'Tax info 2']
+        premier: 'Sandy Silver',
+        taxes: ['GST 5%']
     }
 }
 

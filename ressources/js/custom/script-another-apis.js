@@ -32,7 +32,7 @@ navigator.getBattery().then(function (battery) {
   });
   function updateChargingInfo() {
     var msg = "Battery charging time: " + battery.chargingTime + " seconds"
-    var levchargingtimechangeel = document.getElementById('chargingtimechange');
+    var chargingtimechange = document.getElementById('chargingtimechange');
     console.log(msg);
     chargingtimechange.textContent = msg
   }
