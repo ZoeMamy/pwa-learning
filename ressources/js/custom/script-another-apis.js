@@ -1,6 +1,8 @@
 /**
  * Battery
  */
+
+ if (Modernizr.batteryapi) {
 navigator.getBattery().then(function (battery) {
   updateChargeInfo();
   updateLevelInfo();

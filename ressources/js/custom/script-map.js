@@ -184,18 +184,22 @@ function getProvinceFromLatLong(lat, lng) {
 function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
+            shouldShowProvincesSelector = true
             showCustomInfoForm()
             myMapInfo.innerHTML = "User denied the request for Geolocation."
             break;
         case error.POSITION_UNAVAILABLE:
+            shouldShowProvincesSelector = true
             showCustomInfoForm()
             myMapInfo.innerHTML = "Location information is unavailable."
             break;
         case error.TIMEOUT:
+            shouldShowProvincesSelector = true
             showCustomInfoForm()
             myMapInfo.innerHTML = "The request to get user location timed out."
             break;
         case error.UNKNOWN_ERROR:
+            shouldShowProvincesSelector = true
             showCustomInfoForm()
             myMapInfo.innerHTML = "An unknown error occurred."
             break;
