@@ -8,14 +8,8 @@
     <title>Zoe-Inc Assignment3</title>
     <link rel="icon" href="ressources/image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="ressources/css/style.css">
-    <script type="text/javascript" src="ressources/js/jquery-3.6.0.min.js"></script>
-
-    <!-- Map js -->
-    <script src="ressources/js/script-map.js" type="application/javascript"></script>
-    <!-- hammer js -->
-    <script src="ressources/js/hammer.js"></script>
-    
-
+    <script type="text/javascript" src="ressources/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="ressources/js/lib/hammer.js"></script>
 </head>
 
 <body>
@@ -44,7 +38,7 @@
         <h3>Swipe gesture</h3>
         Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
         <div id="hammer-panel-2" class="info-panel">
-            <label id="block">Swipe me</label>            
+            <label id="block">Swipe me</label>
         </div>
         <div class="msg-panel"><span id="swipe-msg"></span></div>
         <h3>Swipe gesture</h3>
@@ -59,13 +53,15 @@
             <div id="chargingtimechange">N/A</div>
         </div>
         <h3>Vibration</h3>
-        <button onclick="window.navigator.vibrate(200); // vibrate for 200ms">Click here to vibrate the device</button>
+        <button onclick="vibrateDevice()">Click here to vibrate the device</button>
     </main>
 
-
-    <script src="ressources/js/script-hammer.js" type="application/javascript"></script>
-    <!-- battery status -->
-    <script src="ressources/js/script-battery-status.js"></script>
+    <!-- Map js -->
+    <script src="ressources/js/custom/script-map.js" type="application/javascript"></script>
+    <!-- Hammer js -->
+    <script src="ressources/js/custom/script-hammer.js" type="application/javascript"></script>
+    <!-- Another APIS: battery, vibrate -->
+    <script src="ressources/js/custom/script-another-apis.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,6 @@
+/**
+ * Battery
+ */
 navigator.getBattery().then(function (battery) {
   updateChargeInfo();
   updateLevelInfo();
@@ -34,3 +37,10 @@ navigator.getBattery().then(function (battery) {
     chargingtimechange.textContent = msg
   }
 });
+
+/**
+ * Vibrate
+ */
+function vibrateDevice() {
+  window.navigator.vibrate(250) // vibrate for 250ms
+}
