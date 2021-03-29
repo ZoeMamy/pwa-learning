@@ -94,6 +94,7 @@ var computedInfo = { // provide default values
     age: '',
     attrations: [],
 }
+var shouldShowProvincesSelector = false
 
 hideComputedInfoForm()
 prepareProvincesList()
@@ -104,12 +105,13 @@ prepareProvincesList()
  */
 
 function getLocation() {
-    // if (navigator.geolocation) {
-    //     navigator.geolocation.getCurrentPosition(showPosition, showError);
-    // } else {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        shouldShowProvincesSelector = true
         showCustomInfoForm()
         myMap.innerHTML = "Geolocation is not supported by this browser.";
-    // }
+    }
 }
 
 function showPosition(position) {
@@ -129,6 +131,49 @@ function showPosition(position) {
 
     var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
     var marker = new google.maps.Marker({ position: latlon, map: map, title: "You are here!" });
+
+    // Get Province's name
+    var provinceCode = getProvinceFromLatLong(lat, lon)
+    console.log('getProvinceFromLatLong', provinceCode)
+    computedInfo.province = provinceCode
+
+    shouldShowProvincesSelector = false
+    showCustomInfoForm()
+}
+
+function getProvinceFromLatLong(lat, lng) {
+    var city = {}
+    var latlng = new google.maps.LatLng(lat, lng);
+    var geocoder = new google.maps.Geocoder();
+    
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            console.log('reverse geo coding', results)
+            if (results[1]) {
+                //formatted address
+                console.log('found address', results[0].formatted_address)
+                //find country name
+                for (var i = 0; i < results[0].address_components.length; i++) {
+                    for (var b = 0; b < results[0].address_components[i].types.length; b++) {
+
+                        // there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                        if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                            //this is the object you are looking for
+                            city = results[0].address_components[i];
+                            break;
+                        }
+                    }
+                }
+                //city data
+                console.log('found city ', city, city.short_name)
+                computedInfo.province = (city.short_name).toLowerCase()
+            } else {
+                console.warn("No results found");
+            }
+        } else {
+            console.error("Geocoder failed due to: " + status);
+        }
+    });
 }
 
 function showError(error) {
@@ -152,9 +197,13 @@ function showError(error) {
     }
 }
 
-
 function showCustomInfoForm() {
     console.log('showCustomInfoForm')
+    if (shouldShowProvincesSelector) {
+        $('#province-or-territory').show()
+    } else {
+        $('#province-or-territory').hide()
+    }
     $('#custom-info').show()
 }
 
@@ -171,20 +220,21 @@ function showComputedInfoForm() {
 
 function prepareProvincesList() {
     console.log(provinceData)
-    $.each(Object.keys(provinceData), function(i, item){
+    $.each(Object.keys(provinceData), function (i, item) {
         console.log("append", i, item, provinceData[item])
         $('#province-or-territory').append('<option value ="' + item + '">' + provinceData[item].province + '</option>');
-      });
+    });
 
-      $( "#province-or-territory" ).change(function() {
+    $("#province-or-territory").change(function () {
         console.log('change provinde from select', $(this).val())
         computedInfo.province = $(this).val()
         showComputedInfoForm()
-      });
+    });
 }
 
 function prepareCumputedInfoBasedOnProvince() {
     var selectedProvince = computedInfo.province
+    console.log('selectedProvince', selectedProvince)
     $('#province').text(provinceData[selectedProvince].province)
     $('#premier').text(provinceData[selectedProvince].premier)
     $('#taxes').text(provinceData[selectedProvince].taxes.join(', '))
@@ -205,8 +255,8 @@ function getAttractionLinkFromAge(age) {
     var safeAge = !!age ? age * 1 : 0
     var existingAges = Object.keys(attractionLinksPerAges)
 
-    if(safeAge === 0) {
-        return attractionLinksPerAges['0'] 
+    if (safeAge === 0) {
+        return attractionLinksPerAges['0']
     }
 
     for (var i = 0; i < existingAges.length; i++) {
