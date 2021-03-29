@@ -21,15 +21,36 @@
     <main>
 
         <h2>1.Geolocation API in JavaScript</h2>
-        <div class="extra">
+        
+        <h3>Check your position first</h3>
+        <p id="my-map">Click the button to get your position.</p>
+        <button onclick="getLocation()">See my location</button>
 
-            <b> Province : </b><span id="province"></span><br>
-            <b>City :</b><span id="city"></span><br>
-            <b>Premiers</b><span id="premier"></span><br>
+        <div id="custom-info" class="my-form" style="display: none;">
+            <h3>Please fill these info</h3>
+            <form>
+                <div>
+                    <div class="row">
+                        <label for="province-or-territory">Province (or Territory) : </label>
+                        <select name="" id="province-or-territory">
+                            <!-- Dynamic loading here -->
+                        </select>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <p id="demo">Click the button to get your position.</p>
-        <button onclick="getLocation()">click to see your position</button>
+        <div id="computed-info" class="my-form" style="display: none;">
+            <form>
+                <div>
+                    <div class="row"><label for="province">Province : </label><span id="province">N/A</span></div>
+                    <div class="row"><label for="city">City : </label><span id="city">N/A</span></div>
+                    <div class="row"><label for="premier">Premier : </label><span id="premier">N/A</span></div>
+                    <div class="row"><label for="attraction">Attraction sites for you : </label><span id="attraction">N/A</span></div>
+                    <div class="row"><label for="tax">Provincial taxes : </label><span id="tax">N/A</span></div>
+                </div>
+            </form>
+        </div>
 
         <div id="mapholder"></div>
 
@@ -66,6 +87,10 @@
     <script src="ressources/js/custom/script-hammer.js" type="application/javascript"></script>
     <!-- Another APIS: battery, vibrate -->
     <script src="ressources/js/custom/script-another-apis.js"></script>
+
+    <script>
+        
+    </script>
 </body>
 
 </html>
