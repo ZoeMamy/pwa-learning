@@ -64,3 +64,7 @@ body {margin:20px;}
 .row label{
   font-weight: bold;
 }
+
+#mapholder {
+  margin-top: 15px;
+}

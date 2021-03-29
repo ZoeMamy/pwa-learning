@@ -1,7 +1,8 @@
 /**
  * Main callings
  */
-var myMap = document.getElementById("my-map");
+var myMapInfo = document.getElementById("my-map-info");
+
 var provinceData = {
     ab: {
         province: 'Alberta',
@@ -91,7 +92,7 @@ var attractionLinksPerAges = {
 
 var computedInfo = { // provide default values
     province: 'ab',
-    age: '',
+    age: '0',
     attrations: [],
 }
 var shouldShowProvincesSelector = false
@@ -110,7 +111,7 @@ function getLocation() {
     } else {
         shouldShowProvincesSelector = true
         showCustomInfoForm()
-        myMap.innerHTML = "Geolocation is not supported by this browser.";
+        myMapInfo.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
@@ -120,7 +121,7 @@ function showPosition(position) {
     var latlon = new google.maps.LatLng(lat, lon)
     var mapholder = document.getElementById('mapholder')
     mapholder.style.height = '300px';
-    mapholder.style.width = '500px';
+    mapholder.style.width = '800px';
 
     var myOptions = {
         center: latlon, zoom: 14,
@@ -165,13 +166,17 @@ function getProvinceFromLatLong(lat, lng) {
                     }
                 }
                 //city data
-                console.log('found city ', city, city.short_name)
+                console.log('found city ', city)
                 computedInfo.province = (city.short_name).toLowerCase()
             } else {
-                console.warn("No results found");
+                const msg = "No results found"
+                console.warn(msg);
+                alert(msg)
             }
         } else {
-            console.error("Geocoder failed due to: " + status);
+            const msg = "Geocoder failed due to: " + status
+            console.error(msg);
+            alert(msg)
         }
     });
 }
@@ -180,19 +185,19 @@ function showError(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
             showCustomInfoForm()
-            myMap.innerHTML = "User denied the request for Geolocation."
+            myMapInfo.innerHTML = "User denied the request for Geolocation."
             break;
         case error.POSITION_UNAVAILABLE:
             showCustomInfoForm()
-            myMap.innerHTML = "Location information is unavailable."
+            myMapInfo.innerHTML = "Location information is unavailable."
             break;
         case error.TIMEOUT:
             showCustomInfoForm()
-            myMap.innerHTML = "The request to get user location timed out."
+            myMapInfo.innerHTML = "The request to get user location timed out."
             break;
         case error.UNKNOWN_ERROR:
             showCustomInfoForm()
-            myMap.innerHTML = "An unknown error occurred."
+            myMapInfo.innerHTML = "An unknown error occurred."
             break;
     }
 }
