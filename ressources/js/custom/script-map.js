@@ -270,7 +270,7 @@ function getAttractionLinkFromAge(age) {
 
     for (var i = 0; i < existingAges.length; i++) {
         console.log('look up age key', i, existingAges[i], attractionLinksPerAges[existingAges[i]])
-        if (safeAge <= existingAges[i]) {
+        if (safeAge < existingAges[i]) {
             return attractionLinksPerAges[existingAges[i - 1]];
         }
     }
