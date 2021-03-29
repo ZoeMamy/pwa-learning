@@ -8,11 +8,11 @@
     <title>Zoe-Inc Assignment3</title>
     <link rel="icon" href="ressources/image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="ressources/css/style.css">
-    <script src="resources/js/prefixfree.min.js" type="application/javascript"></script>
-    <script src="ressources/js/" type="application/javascript"></script>
+    <script src="ressources/js/script.js" type="application/javascript"></script>
+    <script src="ressources/js/hammer.js"></script>
+
 
 </head>
-
 
 <body>
     <header>
@@ -22,6 +22,27 @@
     <main>
 
         <h2>1.Geolocation API in JavaScript</h2>
+        <div class="extra">
+           
+            <b> Province : </b><span id= "province"></span><br>
+            <b>City :</b><span id= "city"></span><br>
+            <b>Premiers</b><span id= "premier"></span><br>
+    </div>
+
+        <p id="demo">Click the button to get your position.</p>
+        <button  onclick="getLocation()">click to see your position</button>
+
+        <div id="mapholder" ></div>
+
+        <script src="https://maps.google.com/maps/api/js?key=AIzaSyDzjfS_IbUPlI_P5hSeRxBJi0BndWsNyVQ"></script>
+
+        <div id="myElement"></div>
+       
+   
+    </main>
+
+    
+
 
 </body>
 
