@@ -65,6 +65,25 @@ var provinceData = {
     }
 }
 
+var attractionLinksPerAges = {
+    0: 'link0',
+    5: 'link1',
+    10: 'link2',
+    15: 'link3',
+    20: 'link4',
+    25: 'link5',
+    30: 'link6',
+    35: 'link7',
+    40: 'link8',
+    45: 'link9',
+    50: 'link10',
+    60: 'link11',
+    70: 'link12',
+    80: 'link13',
+    90: 'link14',
+    100: 'link15'
+}
+
 var computedInfo = { // provide default values
     province: 'ab',
     age: '',
@@ -165,10 +184,26 @@ function prepareCumputedInfoBasedOnProvince() {
     $('#premier').text(provinceData[selectedProvince].premier)
     $('#taxes').text(provinceData[selectedProvince].taxes.join(', '))
     $('#age').text(computedInfo.age)
+
+    var attractionLink = getAttractionLinkFromAge(computedInfo.age)
+    $('#attraction').text(attractionLink)
+    $('#attraction').attr('href', attractionLink)
 }
 
 function handleChangedAge(value) {
     console.log("Age has changed", value)
     computedInfo.age = value
     showComputedInfoForm()
+}
+
+function getAttractionLinkFromAge(age) {
+    var safeAge = !!age ? age * 1 : 0
+    var existingAges = Object.keys(attractionLinksPerAges)
+
+    for (var i = 0; i < existingAges.length; i++) {
+        console.log('look up age key', i, existingAges[i], attractionLinksPerAges[existingAges[i]])
+        if (safeAge <= existingAges[i]) {
+            return attractionLinksPerAges[existingAges[i]];
+        }
+      }
 }
