@@ -42,5 +42,12 @@ navigator.getBattery().then(function (battery) {
  * Vibrate
  */
 function vibrateDevice() {
-  window.navigator.vibrate(250) // vibrate for 250ms
+  var hasVibrated = window.navigator.vibrate(250) // vibrate for 250ms
+  if (Modernizr.vibrate && hasVibrated) {
+    console.debug('Vibrate is supported')
+  } else {
+    var msg = "Vibrate API is not supported in this device"
+    console.warn(msg)
+    alert(msg)
+  }
 }
