@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoe-Inc Assignment3</title>
+    <title>Zoe-Inc</title>
     <link rel="icon" href="ressources/image/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="ressources/css/style.css">
     <script type="text/javascript" src="ressources/js/lib/jquery-3.6.0.min.js"></script>
@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <h1>Assignement 3</h1>
+        <h1>WPA Final Project</h1>
 
     </header>
     <main>
@@ -85,6 +85,20 @@
         <div id="msg-vibration"></div>
     </main>
 
+    <script>
+        // Script to register the service worker goes here
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker is registered', registration);
+                })
+                .catch(err => {
+                    console.error('Registration failed:', err);
+                });
+            });
+        }
+    </script>
     <!-- Map js -->
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDzjfS_IbUPlI_P5hSeRxBJi0BndWsNyVQ"></script>
     <script src="ressources/js/custom/script-map.js" type="application/javascript"></script>
@@ -92,10 +106,6 @@
     <script src="ressources/js/custom/script-hammer.js" type="application/javascript"></script>
     <!-- Another APIS: battery, vibrate -->
     <script src="ressources/js/custom/script-another-apis.js"></script>
-
-    <script>
-        
-    </script>
 </body>
 
 </html>
