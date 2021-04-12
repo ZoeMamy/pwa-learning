@@ -3,12 +3,14 @@
     "short_name": "Zoe-inc PWA",
     "icons": [
         {
-            "src": "study.png",
+            "src": "ressources/image/study-512px.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
     "start_url": "/",
     "background_color": "#fff",
-    "theme_color": "#c7006e"
+    "theme_color": "#c7006e",
+    "display": "fullscreen"
 }
