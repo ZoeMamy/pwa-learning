@@ -62,7 +62,13 @@
             </form>
         </div>
 
-        <h2>2. Implementing Gestures with Hammer.js</h2>
+        <h2>2. Fetch API</h2>
+        <button id="img-btn">Click here to fecth the image</button>
+        <div id="img-container" class="my-image">
+            <!-- Fetched image here -->
+        </div>
+
+        <h2>3. Implementing Gestures with Hammer.js</h2>
         <h3>Swipe gesture</h3>
         Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
         <div id="hammer-panel-2" class="info-panel">
@@ -76,7 +82,7 @@
         </div>
         <div class="msg-panel"><span id="swipe-msg-pan"></span></div>
 
-        <h2>3. Battery status API</h2>
+        <h2>4. Battery status API</h2>
         <div class="info-panel-2">
             <div id="charing">N/A</div>
             <div id="level">N/A</div>
@@ -84,7 +90,7 @@
             <div id="msg-battery"></div>
         </div>
 
-        <h2>4. Vibration API</h2>
+        <h2>5. Vibration API</h2>
         <button onclick="vibrateDevice()">Click here to vibrate the device</button>
         <div id="msg-vibration"></div>
     </main>
@@ -111,5 +117,6 @@
     <!-- Other APIs -->
     <script src="resources/js/custom/script-battery-api.js"></script>
     <script src="resources/js/custom/script-vibrate-api.js"></script>
+    <script src="resources/js/custom/script-fetch-api.js"></script>
 </body>
 </html>
