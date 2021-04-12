@@ -3,7 +3,7 @@
     "short_name": "Zoe-inc PWA",
     "icons": [
         {
-            "src": "ressources/image/study-512px.png",
+            "src": "resources/image/study-512px.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
