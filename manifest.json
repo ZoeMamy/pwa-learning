@@ -1,0 +1,14 @@
+{
+    "name": "Zoe-inc PWA",
+    "short_name": "Zoe-inc PWA",
+    "icons": [
+        {
+            "src": "study.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#fff",
+    "theme_color": "#c7006e"
+}
