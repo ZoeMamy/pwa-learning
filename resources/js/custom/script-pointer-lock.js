@@ -1,6 +1,6 @@
 // Detect feature
 if (Modernizr.pointerlock && Modernizr.canvas) {
-    const msg = 'pointerlock and canvas are supported (according to Modernizr), but might still not working on a touch device. (presse ESC to exit)'
+    const msg = 'Both pointerlock and canvas are supported (according to Modernizr), but pointerlock might still not working on a touch device. (presse ESC to exit)'
     console.log(msg)
     $('#pointerlock-info').text(msg)
   } else {

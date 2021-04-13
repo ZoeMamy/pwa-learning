@@ -25,7 +25,10 @@
     </header>
     <main>
 
-        <h2>1.Geolocation API in JavaScript</h2>
+        <h2>1. Media query</h2>
+        <p>Change the browser width, or switch to landscape viewport to see the implemented effect</p>
+        
+        <h2>2.Geolocation</h2>
         
         <h3>Check your position first</h3>
 
@@ -63,13 +66,13 @@
             </form>
         </div>
 
-        <h2>2. Fetch API</h2>
+        <h2>3. Fetch API</h2>
         <button id="img-btn">Click here to fecth the image</button>
         <div id="img-container" class="my-image">
             <!-- Fetched image here -->
         </div>
 
-        <h2>3. Implementing Gestures with Hammer.js</h2>
+        <h2>4. Implementing Gestures with Hammer.js</h2>
         <h3>Swipe gesture</h3>
         Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
         <div id="hammer-panel-2" class="info-panel">
@@ -83,7 +86,7 @@
         </div>
         <div class="msg-panel"><span id="swipe-msg-pan"></span></div>
 
-        <h2>4. Battery status API</h2>
+        <h2>5. Battery status API</h2>
         <div class="info-panel-2">
             <div id="charing">N/A</div>
             <div id="level">N/A</div>
@@ -91,11 +94,11 @@
             <div id="msg-battery"></div>
         </div>
 
-        <h2>5. Vibration API</h2>
+        <h2>6. Vibration API</h2>
         <button onclick="vibrateDevice()">Click here to vibrate the device</button>
         <div id="msg-vibration"></div>
 
-        <h2>6. Progress bar</h2>
+        <h2>7. Html Progress bar</h2>
         <div id="progress-info">this text will be changed in js side</div>
         <div id="my-progress-container">
             <progress max="100" value="35" id="my-progress"></progress>
@@ -105,7 +108,7 @@
             </div>
         </div>
     
-        <h2>7 & 8: Pointer lock & Canvas </h2>
+        <h2>8 & 9: Pointer lock & Canvas </h2>
         <div id="pointerlock-info">this text will be changed in js side</div>
         <div id="my-pointerlock-container">
             <canvas>
@@ -113,8 +116,28 @@
             </canvas>
             <div id="tracker"></div>
         </div>
-        <h2>8. </h2>
-        
+
+        <h2>10. Html Dataset</h2>
+        <div id="dataset-info">this text will be changed in js side</div>
+        <div id="my-dataset-container">
+            <h3>Html code equivalent</h3>
+            <code>
+                &lt;div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth&gt;Zoe M.&lt;/div&gt;
+            </code>
+            <h3>Render</h3>
+            <div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth>Zoe M.</div>
+            
+            <button onclick="checkDataset()">Click here to get dataset from this html element</button>
+            <button onclick="clearResult()">Clear</button>
+            <div id="my-dataset"></div>
+        </div>
+
+        <h2>11. Ambient light</h2>
+        <div id="ambientlight-info">this text will be changed in js side</div>
+        <div id="my-ambientlight-container">
+            <div id="ambient-sensor"></div>
+            <button onclick="readSensor()">Click here to test the sensor</button>
+        </div>
     </main>
 
     <script>
@@ -142,5 +165,7 @@
     <script src="resources/js/custom/script-fetch-api.js"></script>
     <script src="resources/js/custom/script-progress.js"></script>
     <script src="resources/js/custom/script-pointer-lock.js"></script>
+    <script src="resources/js/custom/script-dataset.js"></script>
+    <script src="resources/js/custom/script-ambient-light.js"></script>
 </body>
 </html>
