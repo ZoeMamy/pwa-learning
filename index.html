@@ -15,7 +15,7 @@
     <script type="text/javascript" src="resources/js/lib/jquery-3.6.0.min.js"></script>
     <script src="resources/js/lib/hammer.js"></script>
     <script src="resources/js/lib/modernizr-vibrate-and-battery.js"></script>
-    <script src="resources/js/lib/modernizr-ambientlight-dataset-pointerlock-progressbar_meter.js"></script>
+    <script src="resources/js/lib/modernizr-ambientlight-canvas-dataset-pointerlock-progressbar_meter.js"></script>
 </head>
 
 <body>
@@ -105,9 +105,14 @@
             </div>
         </div>
     
-
-        <h2>7. </h2>
-        
+        <h2>7 & 8: Pointer lock & Canvas </h2>
+        <div id="pointerlock-info">this text will be changed in js side</div>
+        <div id="my-pointerlock-container">
+            <canvas>
+                Your browser does not support HTML5 canvas
+            </canvas>
+            <div id="tracker"></div>
+        </div>
         <h2>8. </h2>
         
     </main>
@@ -136,5 +141,6 @@
     <script src="resources/js/custom/script-vibrate-api.js"></script>
     <script src="resources/js/custom/script-fetch-api.js"></script>
     <script src="resources/js/custom/script-progress.js"></script>
+    <script src="resources/js/custom/script-pointer-lock.js"></script>
 </body>
 </html>
