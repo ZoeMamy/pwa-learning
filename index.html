@@ -15,6 +15,7 @@
     <script type="text/javascript" src="resources/js/lib/jquery-3.6.0.min.js"></script>
     <script src="resources/js/lib/hammer.js"></script>
     <script src="resources/js/lib/modernizr-vibrate-and-battery.js"></script>
+    <script src="resources/js/lib/modernizr-ambientlight-dataset-pointerlock-progressbar_meter.js"></script>
 </head>
 
 <body>
@@ -93,6 +94,22 @@
         <h2>5. Vibration API</h2>
         <button onclick="vibrateDevice()">Click here to vibrate the device</button>
         <div id="msg-vibration"></div>
+
+        <h2>6. Progress bar</h2>
+        <div id="progress-info">this text will be changed in js side</div>
+        <div id="my-progress-container">
+            <progress max="100" value="35" id="my-progress"></progress>
+            <div class="row">
+                <label for="progress-control">Progress control : </label>
+                <input id="progress-control" type="number" value="35" onchange="updateProgressValue()"/>
+            </div>
+        </div>
+    
+
+        <h2>7. </h2>
+        
+        <h2>8. </h2>
+        
     </main>
 
     <script>
@@ -118,5 +135,6 @@
     <script src="resources/js/custom/script-battery-api.js"></script>
     <script src="resources/js/custom/script-vibrate-api.js"></script>
     <script src="resources/js/custom/script-fetch-api.js"></script>
+    <script src="resources/js/custom/script-progress.js"></script>
 </body>
 </html>
