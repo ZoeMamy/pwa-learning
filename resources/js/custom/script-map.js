@@ -1,3 +1,47 @@
+// Detect feature with modernizr ?
+// if (Modernizr.geolocation) {
+//     const msg = 'geolocation is supported :)'
+//     console.log(msg)
+//     $('#geolocation-info').text(msg)
+//   } else {
+//     const msg = 'geolocation is NOT supported :('
+//     console.log(msg)
+//     $('#geolocation-info').text(msg)
+//     $('#my-geolocation-container').hide()
+//   }
+
+// Will use custom fallback
+function showError(error) {
+    console.log('error on MAP', error)
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            shouldShowProvincesSelector = true
+            showCustomInfoForm()
+            myMapInfo.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            shouldShowProvincesSelector = true
+            showCustomInfoForm()
+            myMapInfo.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            shouldShowProvincesSelector = true
+            showCustomInfoForm()
+            myMapInfo.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            shouldShowProvincesSelector = true
+            showCustomInfoForm()
+            myMapInfo.innerHTML = "An unknown error occurred."
+            break;
+        default:
+            shouldShowProvincesSelector = true
+            showCustomInfoForm()
+            myMapInfo.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+
 /**
  * Main callings
  */
@@ -179,32 +223,6 @@ function getProvinceFromLatLong(lat, lng) {
             alert(msg)
         }
     });
-}
-
-function showError(error) {
-    console.log('error', error)
-    switch (error.code) {
-        case error.PERMISSION_DENIED:
-            shouldShowProvincesSelector = true
-            showCustomInfoForm()
-            myMapInfo.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            shouldShowProvincesSelector = true
-            showCustomInfoForm()
-            myMapInfo.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            shouldShowProvincesSelector = true
-            showCustomInfoForm()
-            myMapInfo.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            shouldShowProvincesSelector = true
-            showCustomInfoForm()
-            myMapInfo.innerHTML = "An unknown error occurred."
-            break;
-    }
 }
 
 function showCustomInfoForm() {
