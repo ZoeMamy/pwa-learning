@@ -151,7 +151,7 @@
         // Register the service worker
         if ('serviceWorker' in navigator) {
             const myGithubRepo = 'pwa-learning'
-            const swRegistrer = ''
+            let swRegistrer = ''
             
             if(window.location.host.includes("github.io")) {
                 // Registration for github page
