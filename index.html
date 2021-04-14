@@ -18,7 +18,8 @@
     <script src="resources/js/lib/hammer.js"></script>
     <script src="resources/js/lib/modernizr-applicationcache-fetch-geolocation-mediaqueries-serviceworker.js"></script>
     <script src="resources/js/lib/modernizr-vibrate-and-battery.js"></script>
-    <script src="resources/js/lib/modernizr-ambientlight-canvas-dataset-pointerlock-progressbar_meter.js"></script>
+    <script src="resourcesNo matching service worker detected. You may need to reload the page, or check that the scope of the service worker for the current page encloses the scope and start URL from the manifest.
+    /js/lib/modernizr-ambientlight-canvas-dataset-pointerlock-progressbar_meter.js"></script>
 </head>
 
 <body>
@@ -150,9 +151,19 @@
     <script>
         // Register the service worker
         if ('serviceWorker' in navigator) {
+            const myGithubRepo = 'pwa-learning'
+            const swRegistrer = ''
+            
+            if(window.location.host.includes("github.io")) {
+                // Registration for github page
+                swRegistrer = navigator.serviceWorker.register(`/${myGithubRepo}/service-worker.js`, `/${myGithubRepo}/`)
+            } else {
+                // Registration for github page
+                swRegistrer = navigator.serviceWorker.register('service-worker.js')
+            }
+            console.log('Resigerting SW for ', swPath, ' | scope: ', swScope)
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
-                .then(registration => {
+                swRegistrer.then(registration => {
                     console.log('Service Worker is registered', registration);
                 })
                 .catch(err => {
