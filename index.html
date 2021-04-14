@@ -29,125 +29,183 @@
         <div id="mediaqueries-info"></div>
         <div id="my-mediaqueries-container">
             <p>Change the browser width, or switch to landscape viewport to see the implemented effect</p>
-        </div>
-        
-        
-        <h2>2.Geolocation</h2>
-        
-        <h3>Check your position first</h3>
 
-        <button onclick="getLocation()">See my location</button>
-        <div id="mapholder"></div>
-        <p id="my-map-info"></p>
+            <div class="formcontainer2">
+                <div class="formcontainer">
+                    <form action="formAction" method="post">
 
-        <div id="custom-info" class="my-form" style="display: none;">
-            <h3>Please change these info for better customization</h3>
-            <form>
-                <div>
-                    <div class="row" id="province-or-territory-row">
-                        <label for="province-or-territory">Province (or Territory) : </label>
-                        <select name="" id="province-or-territory">
-                            <!-- Dynamic loading here -->
-                        </select>
-                    </div>
-                    <div class="row">
-                        <label for="age">Age : </label>
-                        <input id="age" type="number" value="0" onchange="handleChangedAge(this.value)"></age>
-                    </div>
+                        <dl>
+
+                            <dt>
+                                <label for="name">Email adress :</label>
+                            </dt>
+                            <dd><input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    title="Must contain characters@characters.domain" required></dd>
+
+
+                            <dt>
+                                <label for="URL">Personal URL :</label>
+                            </dt>
+                            <dd><input type="url" name="URL" placeholder="e g: http://www.my blog.com" required></dd>
+
+                            <dt>
+                                <label for="date">Year of birth:</label>
+                            </dt>
+                            <dd><input type="date" max="2021-02-28" min="1950-01-01" required></dd>
+
+                            <dt>
+                                <label for="text">Gender :</label>
+                            </dt>
+                            <dd> <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="text">Male</label>
+                                <input type="radio" id="female" name="gender" value="Female" required>
+                                <label for="text">female</label>
+                            </dd>
+                            <dt>
+                                <textarea rows="4" cols="40" name="comment" placeholder="Enter your comments here.."
+                                    required title="must contain at least 3 words"></textarea>
+                            </dt>
+                            <dt>
+                                <input type="checkbox" id="accept" name="data" required>
+                                <label for=data> Data intered are fictitious</label>
+                            </dt>
+
+                            <dt>
+                                <input type="reset" value="Clear all">
+                            </dt>
+                            <dt>
+                                <input type="submit" value="SUBMIT">
+                            </dt>
+                        </dl>
+                    </form>
                 </div>
-            </form>
-        </div>
 
-        <div id="computed-info" class="my-form" style="display: none;">
-            <h3>Here are the info you may need</h3>
-            <form>
-                <div>
-                    <div class="row"><label for="province">Province : </label><span id="province">N/A</span></div>
-                    <div class="row"><label for="premier">Premier : </label><span id="premier">N/A</span></div>
-                    <div class="row"><label for="attraction">Attraction sites for you : </label><a href="#" id="attraction">N/A</a></div>
-                    <div class="row"><label for="taxes">Provincial taxes : </label><span id="taxes">N/A</span></div>
+
+                <div class="extra">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, exercitationem rerum culpa illum
+                    quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, exercitationem rerum
+                    culpa illum quaerat.
                 </div>
-            </form>
-        </div>
-
-        <h2>3. Fetch API</h2>
-        <button id="img-btn">Click here to fecth the image</button>
-        <div id="img-container" class="my-image">
-            <!-- Fetched image here -->
-        </div>
-
-        <h2>4. Implementing Gestures with Hammer.js</h2>
-        <h3>Swipe gesture</h3>
-        Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
-        <div id="hammer-panel-2" class="info-panel">
-            <label id="label-swipe" class="my-label">Swipe me</label>
-        </div>
-        <div class="msg-panel"><span id="swipe-msg-swipe"></span></div>
-        <h3>Pan gesture</h3>
-        Hint: Please simulate a pan gesture in the panel, and see result inside.
-        <div id="hammer-panel-1" class="info-panel">
-            <label id="block" class="my-label">Here</label>
-        </div>
-        <div class="msg-panel"><span id="swipe-msg-pan"></span></div>
-
-        <h2>5. Battery status API</h2>
-        <div class="info-panel-2">
-            <div id="charing">N/A</div>
-            <div id="level">N/A</div>
-            <div id="chargingtimechange">N/A</div>
-            <div id="msg-battery"></div>
-        </div>
-
-        <h2>6. Vibration API</h2>
-        <button onclick="vibrateDevice()">Click here to vibrate the device</button>
-        <div id="msg-vibration"></div>
-
-        <h2>7. Html Progress bar</h2>
-        <div id="progress-info">this text will be changed in js side</div>
-        <div id="my-progress-container">
-            <progress max="100" value="35" id="my-progress"></progress>
-            <div class="row">
-                <label for="progress-control">Progress control : </label>
-                <input id="progress-control" type="number" value="35" onchange="updateProgressValue()"/>
             </div>
-        </div>
-    
-        <h2>8 & 9: Pointer lock & Canvas </h2>
-        <div id="pointerlock-info">this text will be changed in js side</div>
-        <div id="my-pointerlock-container">
-            <canvas>
-                Your browser does not support HTML5 canvas
-            </canvas>
-            <div id="tracker"></div>
-        </div>
 
-        <h2>10. Html Dataset</h2>
-        <div id="dataset-info">this text will be changed in js side</div>
-        <div id="my-dataset-container">
-            <h3>Html code equivalent</h3>
-            <code>
+
+            <h2>2.Geolocation</h2>
+
+            <h3>Check your position first</h3>
+
+            <button onclick="getLocation()">See my location</button>
+            <div id="mapholder"></div>
+            <p id="my-map-info"></p>
+
+            <div id="custom-info" class="my-form" style="display: none;">
+                <h3>Please change these info for better customization</h3>
+                <form>
+                    <div>
+                        <div class="row" id="province-or-territory-row">
+                            <label for="province-or-territory">Province (or Territory) : </label>
+                            <select name="" id="province-or-territory">
+                                <!-- Dynamic loading here -->
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label for="age">Age : </label>
+                            <input id="age" type="number" value="0" onchange="handleChangedAge(this.value)"></age>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div id="computed-info" class="my-form" style="display: none;">
+                <h3>Here are the info you may need</h3>
+                <form>
+                    <div>
+                        <div class="row"><label for="province">Province : </label><span id="province">N/A</span></div>
+                        <div class="row"><label for="premier">Premier : </label><span id="premier">N/A</span></div>
+                        <div class="row"><label for="attraction">Attraction sites for you : </label><a href="#"
+                                id="attraction">N/A</a></div>
+                        <div class="row"><label for="taxes">Provincial taxes : </label><span id="taxes">N/A</span></div>
+                    </div>
+                </form>
+            </div>
+
+            <h2>3. Fetch API</h2>
+            <button id="img-btn">Click here to fecth the image</button>
+            <div id="img-container" class="my-image">
+                <!-- Fetched image here -->
+            </div>
+
+            <h2>4. Implementing Gestures with Hammer.js</h2>
+            <h3>Swipe gesture</h3>
+            Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
+            <div id="hammer-panel-2" class="info-panel">
+                <label id="label-swipe" class="my-label">Swipe me</label>
+            </div>
+            <div class="msg-panel"><span id="swipe-msg-swipe"></span></div>
+            <h3>Pan gesture</h3>
+            Hint: Please simulate a pan gesture in the panel, and see result inside.
+            <div id="hammer-panel-1" class="info-panel">
+                <label id="block" class="my-label">Here</label>
+            </div>
+            <div class="msg-panel"><span id="swipe-msg-pan"></span></div>
+
+            <h2>5. Battery status API</h2>
+            <div class="info-panel-2">
+                <div id="charing">N/A</div>
+                <div id="level">N/A</div>
+                <div id="chargingtimechange">N/A</div>
+                <div id="msg-battery"></div>
+            </div>
+
+            <h2>6. Vibration API</h2>
+            <button onclick="vibrateDevice()">Click here to vibrate the device</button>
+            <div id="msg-vibration"></div>
+
+            <h2>7. Html Progress bar</h2>
+            <div id="progress-info">this text will be changed in js side</div>
+            <div id="my-progress-container">
+                <progress max="100" value="35" id="my-progress"></progress>
+                <div class="row">
+                    <label for="progress-control">Progress control : </label>
+                    <input id="progress-control" type="number" value="35" onchange="updateProgressValue()" />
+                </div>
+            </div>
+
+            <h2>8 & 9: Pointer lock & Canvas </h2>
+            <div id="pointerlock-info">this text will be changed in js side</div>
+            <div id="my-pointerlock-container">
+                <canvas>
+                    Your browser does not support HTML5 canvas
+                </canvas>
+                <div id="tracker"></div>
+            </div>
+
+            <h2>10. Html Dataset</h2>
+            <div id="dataset-info">this text will be changed in js side</div>
+            <div id="my-dataset-container">
+                <h3>Html code equivalent</h3>
+                <code>
                 &lt;div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth&gt;Zoe M.&lt;/div&gt;
             </code>
-            <h3>Render</h3>
-            <div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth>Zoe M.</div>
-            
-            <button onclick="checkDataset()" class="btn">Click here to get dataset from this html element</button>
-            <button onclick="clearResult()" class="btn">Clear</button>
-            <div id="my-dataset"></div>
-        </div>
+                <h3>Render</h3>
+                <div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth>Zoe M.</div>
 
-        <h2>11. Ambient light</h2>
-        <div id="ambientlight-info">this text will be changed in js side</div>
-        <div id="my-ambientlight-container">
-            <div id="ambient-sensor"></div>
-            <button onclick="readSensor()">Click here to test the sensor</button>
-        </div>
+                <button onclick="checkDataset()" class="btn">Click here to get dataset from this html element</button>
+                <button onclick="clearResult()" class="btn">Clear</button>
+                <div id="my-dataset"></div>
+            </div>
+
+            <h2>11. Ambient light</h2>
+            <div id="ambientlight-info">this text will be changed in js side</div>
+            <div id="my-ambientlight-container">
+                <div id="ambient-sensor"></div>
+                <button onclick="readSensor()">Click here to test the sensor</button>
+            </div>
     </main>
 
     <script>
         // Dynamically set manifest, canonical
         let manifestHref = ''
-        if(window.location.host.includes("github.io")) {
+        if (window.location.host.includes("github.io")) {
             manifestHref = 'manifest-for-gh-page.json'
         } else {
             manifestHref = 'manifest.json'
@@ -169,22 +227,22 @@
         if ('serviceWorker' in navigator) {
             const myGithubRepo = 'pwa-learning'
             let swRegistrer = ''
-            
-            if(window.location.host.includes("github.io")) {
+
+            if (window.location.host.includes("github.io")) {
                 console.log('Registration SW for github page')
                 swRegistrer = navigator.serviceWorker.register(`/${myGithubRepo}/service-worker.js`, { scope: `/${myGithubRepo}/` })
             } else {
                 console.log('Registration SW for NON github page')
                 swRegistrer = navigator.serviceWorker.register('service-worker.js')
             }
-            
+
             window.addEventListener('load', () => {
                 swRegistrer.then(registration => {
                     console.log('Service Worker is registered', registration);
                 })
-                .catch(err => {
-                    console.error('Registration failed:', err);
-                });
+                    .catch(err => {
+                        console.error('Registration failed:', err);
+                    });
             });
         }
     </script>
@@ -203,4 +261,5 @@
     <script src="resources/js/custom/script-dataset.js"></script>
     <script src="resources/js/custom/script-ambient-light.js"></script>
 </body>
+
 </html>
