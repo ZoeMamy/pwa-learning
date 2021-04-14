@@ -154,13 +154,13 @@
             let swRegistrer = ''
             
             if(window.location.host.includes("github.io")) {
-                // Registration for github page
+                console.log('Registration SW for github page')
                 swRegistrer = navigator.serviceWorker.register(`/${myGithubRepo}/service-worker.js`, { scope: `/${myGithubRepo}/` })
             } else {
-                // Registration for github page
+                console.log('Registration SW for NON github page')
                 swRegistrer = navigator.serviceWorker.register('service-worker.js')
             }
-            console.log('Resigerting SW for ', swPath, ' | scope: ', swScope)
+            
             window.addEventListener('load', () => {
                 swRegistrer.then(registration => {
                     console.log('Service Worker is registered', registration);
