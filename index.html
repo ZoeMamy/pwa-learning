@@ -9,9 +9,6 @@
     <link rel="icon" href="resources/image/study.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="resources/image/study-192px.png">
     <meta name="theme-color" content="#c7006e">
-    <link rel="manifest" href="manifest.json">
-    <!-- <link rel="canonical" href="https://zoeassignment.000webhostapp.com/"/> -->
-    <!-- <link rel="canonical" href="http://127.0.0.1:5500/index.html"/> -->
 
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     <script type="text/javascript" src="resources/js/lib/jquery-3.6.0.min.js"></script>
@@ -148,6 +145,26 @@
     </main>
 
     <script>
+        // Dynamically set manifest, canonical
+        let manifestHref = ''
+        if(window.location.host.includes("github.io")) {
+            manifestHref = 'manifest-for-gh-page.json'
+        } else {
+            manifestHref = 'manifest.json'
+        }
+        appendFileInHead('manifest', manifestHref)
+        appendFileInHead('canonical', window.location.href) // eg: https://zoemamy.github.io/pwa-learning/ for github page
+
+        function appendFileInHead(rel, filePath) {
+            var link = document.createElement('link')
+            link.rel = rel
+            link.href = filePath;
+            //link.setAttribute('async', '') // make it async!
+            // link.onload = function(e) {...}
+            // link.onerror = function(e) {...}
+            document.head.appendChild(link)
+        }
+
         // Register the service worker
         if ('serviceWorker' in navigator) {
             const myGithubRepo = 'pwa-learning'

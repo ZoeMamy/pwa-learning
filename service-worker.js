@@ -2,6 +2,7 @@
 const filesToCache = [
   './',
   './manifest.json',
+  './manifest-for-gh-page.json',
   './resources/css/style.css',
   './resources/image/study-512px.png',
   './resources/image/study-192px.png',
@@ -25,7 +26,7 @@ const filesToCache = [
   './resources/js/lib/modernizr-vibrate-and-battery.js',
 ];
 
-const staticCacheName = 'pages-cache-v3';
+const staticCacheName = 'pages-cache-v3.1';
 
 self.addEventListener('install', event => {
   console.log('Attempting to install service worker and cache static assets');

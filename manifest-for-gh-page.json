@@ -1,0 +1,16 @@
+{
+    "name": "Zoe-inc PWA",
+    "short_name": "Zoe-inc PWA",
+    "icons": [
+        {
+            "src": "resources/image/study-512px.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/pwa-learning/",
+    "background_color": "#fff",
+    "theme_color": "#c7006e",
+    "display": "fullscreen"
+}
