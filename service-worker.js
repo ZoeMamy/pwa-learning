@@ -1,10 +1,31 @@
 // List the application shell
 const filesToCache = [
   './',
-  './resources/',
+  './manifest.json',
+  './resources/css/style.css',
+  './resources/image/study-512px.png',
+  './resources/image/study-192px.png',
+  './resources/image/progressive-web-app.jpg',
+  './resources/image/study.ico',
+  './resources/image/favicon.ico',
+  './resources/js/custom/script-ambient-light.js',
+  './resources/js/custom/script-battery-api.js',
+  './resources/js/custom/script-dataset.js',
+  './resources/js/custom/script-fetch-api.js',
+  './resources/js/custom/script-hammer.js',
+  './resources/js/custom/script-map.js',
+  './resources/js/custom/script-media-query.js',
+  './resources/js/custom/script-pointer-lock.js',
+  './resources/js/custom/script-progress.js',
+  './resources/js/custom/script-vibrate-api.js',
+  './resources/js/lib/hammer.js',
+  './resources/js/lib/jquery-3.6.0.min.js',
+  './resources/js/lib/modernizr-ambientlight-canvas-dataset-pointerlock-progressbar_meter.js',
+  './resources/js/lib/modernizr-applicationcache-fetch-geolocation-mediaqueries-serviceworker.js',
+  './resources/js/lib/modernizr-vibrate-and-battery.js',
 ];
 
-const staticCacheName = 'pages-cache-v2';
+const staticCacheName = 'pages-cache-v3';
 
 self.addEventListener('install', event => {
   console.log('Attempting to install service worker and cache static assets');
