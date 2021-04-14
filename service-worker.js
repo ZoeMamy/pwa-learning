@@ -1,7 +1,7 @@
 // List the application shell
 const filesToCache = [
-  '/',
-  'resources/',
+  './',
+  './resources/',
 ];
 
 const staticCacheName = 'pages-cache-v2';
