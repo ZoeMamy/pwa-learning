@@ -5,45 +5,175 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoe-Inc Assignment3</title>
-    <link rel="icon" href="ressources/image/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="ressources/css/style.css">
-    <script src="ressources/js/script.js" type="application/javascript"></script>
-    <script src="ressources/js/hammer.js"></script>
+    <title>Zoe-Inc</title>
+    <link rel="icon" href="resources/image/study.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="resources/image/study-192px.png">
+    <meta name="theme-color" content="#c7006e">
+    <link rel="manifest" href="manifest.json">
+    <!-- <link rel="canonical" href="https://zoeassignment.000webhostapp.com/"/> -->
+    <!-- <link rel="canonical" href="http://127.0.0.1:5500/index.html"/> -->
 
-
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <script type="text/javascript" src="resources/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="resources/js/lib/hammer.js"></script>
+    <script src="resources/js/lib/modernizr-applicationcache-fetch-geolocation-mediaqueries-serviceworker.js"></script>
+    <script src="resources/js/lib/modernizr-vibrate-and-battery.js"></script>
+    <script src="resources/js/lib/modernizr-ambientlight-canvas-dataset-pointerlock-progressbar_meter.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Assignement 3</h1>
+        <h1>WPA Final Project</h1>
 
     </header>
     <main>
 
-        <h2>1.Geolocation API in JavaScript</h2>
-        <div class="extra">
-           
-            <b> Province : </b><span id= "province"></span><br>
-            <b>City :</b><span id= "city"></span><br>
-            <b>Premiers</b><span id= "premier"></span><br>
-    </div>
+        <h2>1. Media query</h2>
+        <div id="mediaqueries-info"></div>
+        <div id="my-mediaqueries-container">
+            <p>Change the browser width, or switch to landscape viewport to see the implemented effect</p>
+        </div>
+        
+        
+        <h2>2.Geolocation</h2>
+        
+        <h3>Check your position first</h3>
 
-        <p id="demo">Click the button to get your position.</p>
-        <button  onclick="getLocation()">click to see your position</button>
+        <button onclick="getLocation()">See my location</button>
+        <div id="mapholder"></div>
+        <p id="my-map-info"></p>
 
-        <div id="mapholder" ></div>
+        <div id="custom-info" class="my-form" style="display: none;">
+            <h3>Please change these info for better customization</h3>
+            <form>
+                <div>
+                    <div class="row" id="province-or-territory-row">
+                        <label for="province-or-territory">Province (or Territory) : </label>
+                        <select name="" id="province-or-territory">
+                            <!-- Dynamic loading here -->
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="age">Age : </label>
+                        <input id="age" type="number" value="0" onchange="handleChangedAge(this.value)"></age>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-        <script src="https://maps.google.com/maps/api/js?key=AIzaSyDzjfS_IbUPlI_P5hSeRxBJi0BndWsNyVQ"></script>
+        <div id="computed-info" class="my-form" style="display: none;">
+            <h3>Here are the info you may need</h3>
+            <form>
+                <div>
+                    <div class="row"><label for="province">Province : </label><span id="province">N/A</span></div>
+                    <div class="row"><label for="premier">Premier : </label><span id="premier">N/A</span></div>
+                    <div class="row"><label for="attraction">Attraction sites for you : </label><a href="#" id="attraction">N/A</a></div>
+                    <div class="row"><label for="taxes">Provincial taxes : </label><span id="taxes">N/A</span></div>
+                </div>
+            </form>
+        </div>
 
-        <div id="myElement"></div>
-       
-   
+        <h2>3. Fetch API</h2>
+        <button id="img-btn">Click here to fecth the image</button>
+        <div id="img-container" class="my-image">
+            <!-- Fetched image here -->
+        </div>
+
+        <h2>4. Implementing Gestures with Hammer.js</h2>
+        <h3>Swipe gesture</h3>
+        Hint: Please simulate a swipe right & left gesture in the panel, and see result inside.
+        <div id="hammer-panel-2" class="info-panel">
+            <label id="label-swipe" class="my-label">Swipe me</label>
+        </div>
+        <div class="msg-panel"><span id="swipe-msg-swipe"></span></div>
+        <h3>Pan gesture</h3>
+        Hint: Please simulate a pan gesture in the panel, and see result inside.
+        <div id="hammer-panel-1" class="info-panel">
+            <label id="block" class="my-label">Here</label>
+        </div>
+        <div class="msg-panel"><span id="swipe-msg-pan"></span></div>
+
+        <h2>5. Battery status API</h2>
+        <div class="info-panel-2">
+            <div id="charing">N/A</div>
+            <div id="level">N/A</div>
+            <div id="chargingtimechange">N/A</div>
+            <div id="msg-battery"></div>
+        </div>
+
+        <h2>6. Vibration API</h2>
+        <button onclick="vibrateDevice()">Click here to vibrate the device</button>
+        <div id="msg-vibration"></div>
+
+        <h2>7. Html Progress bar</h2>
+        <div id="progress-info">this text will be changed in js side</div>
+        <div id="my-progress-container">
+            <progress max="100" value="35" id="my-progress"></progress>
+            <div class="row">
+                <label for="progress-control">Progress control : </label>
+                <input id="progress-control" type="number" value="35" onchange="updateProgressValue()"/>
+            </div>
+        </div>
+    
+        <h2>8 & 9: Pointer lock & Canvas </h2>
+        <div id="pointerlock-info">this text will be changed in js side</div>
+        <div id="my-pointerlock-container">
+            <canvas>
+                Your browser does not support HTML5 canvas
+            </canvas>
+            <div id="tracker"></div>
+        </div>
+
+        <h2>10. Html Dataset</h2>
+        <div id="dataset-info">this text will be changed in js side</div>
+        <div id="my-dataset-container">
+            <h3>Html code equivalent</h3>
+            <code>
+                &lt;div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth&gt;Zoe M.&lt;/div&gt;
+            </code>
+            <h3>Render</h3>
+            <div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth>Zoe M.</div>
+            
+            <button onclick="checkDataset()" class="btn">Click here to get dataset from this html element</button>
+            <button onclick="clearResult()" class="btn">Clear</button>
+            <div id="my-dataset"></div>
+        </div>
+
+        <h2>11. Ambient light</h2>
+        <div id="ambientlight-info">this text will be changed in js side</div>
+        <div id="my-ambientlight-container">
+            <div id="ambient-sensor"></div>
+            <button onclick="readSensor()">Click here to test the sensor</button>
+        </div>
     </main>
 
-    
-
-
+    <script>
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker is registered', registration);
+                })
+                .catch(err => {
+                    console.error('Registration failed:', err);
+                });
+            });
+        }
+    </script>
+    <!-- Map js -->
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDzjfS_IbUPlI_P5hSeRxBJi0BndWsNyVQ"></script>
+    <script src="resources/js/custom/script-map.js" type="application/javascript"></script>
+    <!-- Hammer js -->
+    <script src="resources/js/custom/script-hammer.js" type="application/javascript"></script>
+    <!-- Other APIs -->
+    <script src="resources/js/custom/script-media-query.js"></script>
+    <script src="resources/js/custom/script-battery-api.js"></script>
+    <script src="resources/js/custom/script-vibrate-api.js"></script>
+    <script src="resources/js/custom/script-fetch-api.js"></script>
+    <script src="resources/js/custom/script-progress.js"></script>
+    <script src="resources/js/custom/script-pointer-lock.js"></script>
+    <script src="resources/js/custom/script-dataset.js"></script>
+    <script src="resources/js/custom/script-ambient-light.js"></script>
 </body>
-
 </html>
