@@ -6,6 +6,10 @@ h1 {
   padding: 15px;
 }
 
+.banner {
+  width: 100%;
+}
+
 h2 {
   font-size: 5vw;
   margin-top: 50px;
@@ -15,13 +19,51 @@ body {
   margin: 20px;
 }
 
+.formcontainer2 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 div.formcontainer {
+  display: block;
+  width: 80%;
   border-radius: 5px;
   background-color: #B2DFDB;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+}
+
+input[type=date], textarea, input[type=url], input[type=email], input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit], input[type=reset] {
+  width: 100%;
+  background-color: #00897B;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset] {
+  background-color: #26A69A;
+}
+
+.extra {
+  width: 55%;
+  margin-left: 60px;
+  margin-top: 80px;
 }
 
 @media (orientation: portrait) {
@@ -33,15 +75,18 @@ div.formcontainer {
   }
   div.formcontainer {
     background-color: #FFCDD2;
-    @media (orientation: portrait) {
-      h1 {
-        color: #c7006e;
-        font-size: 30px;
-        border: 8px solid #F48FB1;
-        background: #fbe2f0;
-      }
-    }    width: 80%;
+    width: 80%;
     box-shadow: 10px 10px grey;
+  }
+  input[type=submit] {
+    background-color: #EF5350;
+    color: white;
+  }
+  input[type=reset] {
+    background-color: #EF9A9A;
+  }
+  .extra {
+    display: none;
   }
 }
 

@@ -20,7 +20,8 @@
 
 <body>
     <header>
-        <h1>WPA Final Project</h1>
+        <img src="resources/image/banner.png" alt="banner" class="banner"/>
+        <h1>Useful features for your 1st PWA</h1>
 
     </header>
     <main>
@@ -29,14 +30,68 @@
         <div id="mediaqueries-info"></div>
         <div id="my-mediaqueries-container">
             <p>Change the browser width, or switch to landscape viewport to see the implemented effect</p>
-            <div class="formcontainer">
-                Similique, exercitationem rerum culpa illum quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <div class="formcontainer2">
+                <div class="formcontainer">
+                    <form action="formAction" method="post">
+                        <dl>
+                            <dt>
+                                <label for="name">Email adress :
+                                    <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                        title="Must contain characters@characters.domain" required>
+                                </label>
+                            </dt>
+
+                            <dt>
+                                <label for="URL">Personal URL :
+                                    <input type="url" name="URL" placeholder="e g: http://www.my blog.com" required>
+                                </label>
+                            </dt>
+
+                            <dt>
+                                <label for="date">Year of birth:
+                                    <input type="date" max="2021-02-28" min="1950-01-01" required>
+                                </label>
+                            </dt>
+                            <dt>
+                                <label for="text">Gender :</label>
+                            </dt>
+                            <dd>
+                                <label for="text">Male
+                                    <input type="radio" id="male" name="gender" value="male" required>
+                                </label>
+
+                                <label for="text">female
+                                    <input type="radio" id="female" name="gender" value="Female" required>
+                                </label>
+                            </dd>
+                            <dt>
+                                <input type="checkbox" id="accept" name="data" required>
+                                <label for=data> Data intered are fictitious</label>
+                            </dt>
+
+                            <dt>
+                                <input type="reset" value="Clear all">
+                            </dt>
+                            <dt>
+                                <input type="submit" value="SUBMIT">
+                            </dt>
+                        </dl>
+                    </form>
+                </div>
+
+
+                <div class="extra">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, exercitationem rerum culpa illum
+                    quaerat Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, exercitationem rerum
+                    culpa
+                    illum quaerat.
+                </div>
             </div>
         </div>
-        
-        
+
+
         <h2>2.Geolocation</h2>
-        
+
         <h3>Check your position first</h3>
 
         <button onclick="getLocation()">See my location</button>
@@ -67,7 +122,8 @@
                 <div>
                     <div class="row"><label for="province">Province : </label><span id="province">N/A</span></div>
                     <div class="row"><label for="premier">Premier : </label><span id="premier">N/A</span></div>
-                    <div class="row"><label for="attraction">Attraction sites for you : </label><a href="#" id="attraction">N/A</a></div>
+                    <div class="row"><label for="attraction">Attraction sites for you : </label><a href="#"
+                            id="attraction">N/A</a></div>
                     <div class="row"><label for="taxes">Provincial taxes : </label><span id="taxes">N/A</span></div>
                 </div>
             </form>
@@ -111,10 +167,10 @@
             <progress max="100" value="35" id="my-progress"></progress>
             <div class="row">
                 <label for="progress-control">Progress control : </label>
-                <input id="progress-control" type="number" value="35" onchange="updateProgressValue()"/>
+                <input id="progress-control" type="number" value="35" onchange="updateProgressValue()" />
             </div>
         </div>
-    
+
         <h2>8 & 9: Pointer lock & Canvas </h2>
         <div id="pointerlock-info">this text will be changed in js side</div>
         <div id="my-pointerlock-container">
@@ -133,7 +189,7 @@
             </code>
             <h3>Render</h3>
             <div id="user" data-id="1234" data-name="Zoe M." data-date-of-birth>Zoe M.</div>
-            
+
             <button onclick="checkDataset()" class="btn">Click here to get dataset from this html element</button>
             <button onclick="clearResult()" class="btn">Clear</button>
             <div id="my-dataset"></div>
@@ -150,7 +206,7 @@
     <script>
         // Dynamically set manifest, canonical
         let manifestHref = ''
-        if(window.location.host.includes("github.io")) {
+        if (window.location.host.includes("github.io")) {
             manifestHref = 'manifest-for-gh-page.json'
         } else {
             manifestHref = 'manifest.json'
@@ -172,22 +228,22 @@
         if ('serviceWorker' in navigator) {
             const myGithubRepo = 'pwa-learning'
             let swRegistrer = ''
-            
-            if(window.location.host.includes("github.io")) {
+
+            if (window.location.host.includes("github.io")) {
                 console.log('Registration SW for github page')
                 swRegistrer = navigator.serviceWorker.register(`/${myGithubRepo}/service-worker.js`, { scope: `/${myGithubRepo}/` })
             } else {
                 console.log('Registration SW for NON github page')
                 swRegistrer = navigator.serviceWorker.register('service-worker.js')
             }
-            
+
             window.addEventListener('load', () => {
                 swRegistrer.then(registration => {
                     console.log('Service Worker is registered', registration);
                 })
-                .catch(err => {
-                    console.error('Registration failed:', err);
-                });
+                    .catch(err => {
+                        console.error('Registration failed:', err);
+                    });
             });
         }
     </script>
@@ -206,4 +262,5 @@
     <script src="resources/js/custom/script-dataset.js"></script>
     <script src="resources/js/custom/script-ambient-light.js"></script>
 </body>
+
 </html>
