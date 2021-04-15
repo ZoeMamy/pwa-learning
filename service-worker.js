@@ -7,7 +7,6 @@ const filesToCache = [
   './resources/image/study-512px.png',
   './resources/image/study-192px.png',
   './resources/image/progressive-web-app.jpg',
-  './resources/image/banner.png',
   './resources/image/study.ico',
   './resources/image/favicon.ico',
   './resources/js/custom/script-ambient-light.js',
@@ -27,7 +26,7 @@ const filesToCache = [
   './resources/js/lib/modernizr-vibrate-and-battery.js',
 ];
 
-const staticCacheName = 'pages-cache-v3.2';
+const staticCacheName = 'pages-cache-v3.1';
 
 self.addEventListener('install', event => {
   console.log('Attempting to install service worker and cache static assets');
