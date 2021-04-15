@@ -19,7 +19,7 @@ const filesToCache = [
   './resources/js/custom/script-pointer-lock.js',
   './resources/js/custom/script-progress.js',
   './resources/js/custom/script-vibrate-api.js',
-  './resources/js/lib/hammer.js',
+  './resources/js/lib/hammer.min.js',
   './resources/js/lib/jquery-3.6.0.min.js',
   './resources/js/lib/modernizr-ambientlight-canvas-dataset-pointerlock-progressbar_meter.js',
   './resources/js/lib/modernizr-applicationcache-fetch-geolocation-mediaqueries-serviceworker.js',
