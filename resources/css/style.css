@@ -15,12 +15,33 @@ body {
   margin: 20px;
 }
 
+div.formcontainer {
+  border-radius: 5px;
+  background-color: #B2DFDB;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
 @media (orientation: portrait) {
   h1 {
     color: #c7006e;
     font-size: 30px;
     border: 8px solid #F48FB1;
     background: #fbe2f0;
+  }
+  div.formcontainer {
+    background-color: #FFCDD2;
+    @media (orientation: portrait) {
+      h1 {
+        color: #c7006e;
+        font-size: 30px;
+        border: 8px solid #F48FB1;
+        background: #fbe2f0;
+      }
+    }    width: 80%;
+    box-shadow: 10px 10px grey;
   }
 }
 
